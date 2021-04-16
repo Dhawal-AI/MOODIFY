@@ -24,7 +24,7 @@ y=c+w1x1+w2x2
 Training a model simply means learning (determining) good values for all the weights and the bias from labeled examples. In supervised learning, a machine learning algorithm builds a model by examining many examples and attempting to find a model that minimizes loss; this process is called empirical risk minimization.
 
 Loss is the penalty for a bad prediction. That is, loss is a number indicating how bad the model's prediction was on a single example. If the model's prediction is perfect, the loss is zero; otherwise, the loss is greater.
-The loss function y2 is (y-y'
+The loss function y2 is (y-y')^2
 
 
 
