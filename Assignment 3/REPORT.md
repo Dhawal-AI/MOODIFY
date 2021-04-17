@@ -60,12 +60,20 @@ Never train on test data. If you are seeing surprisingly good results on your ev
 
 Assessment of check your intuition:
 
-![ML Validation set](https://user-images.githubusercontent.com/81472530/114302049-f3e4a100-9ae4-11eb-85bd-9df81d6736f1.jpg)
+<img width="563" alt="Screenshot 2021-04-18 at 1 00 53 AM" src="https://user-images.githubusercontent.com/74460296/115124753-90290f00-9fe1-11eb-9610-71e316d26a13.png">
+
 
 This module emphasises on creating an additional data set called validation set to validate the training data and further tune the hyperparameters.
 Finally using the model well built on training and validation data to make predictions on the test data set.
 This is a better workflow because it creates fewer exposures to the test set.
 The programming exercise focuses on shuffling and dividing the single data set and checking the effectiveness of this workflow.
+
+## Representation
+The basic qualities that a good feature should possess are :
+It should have a clear meaning .
+It should occur quite a few times , features such as unique ID etc are of no use.
+We should check that the feature isn’t noisy
+We shouldn’t mix magic values with the feature if a particular value is missing . Instead we can create a separate boolean feature to indicate whether or not a value was supplied.
 
 
 
