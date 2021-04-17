@@ -75,6 +75,35 @@ It should occur quite a few times , features such as unique ID etc are of no use
 We should check that the feature isn’t noisy
 We shouldn’t mix magic values with the feature if a particular value is missing . Instead we can create a separate boolean feature to indicate whether or not a value was supplied.
 
+## Feature Crosses:
+A feature cross is a synthetic feature that encodes nonlinearity in the feature space by multiplying two or more input features together. However feature crosses between categorical features are sometimes more useful than numerical features. Thus we cross the one hot encodings of these features. From these crosses we get  binary features that can be interpreted as logical conjunctions. From such feature crosses we get more predictive ability than either feature of their own.
+<img width="731" alt="Screenshot 2021-04-18 at 1 06 53 AM" src="https://user-images.githubusercontent.com/74460296/115124923-b26f5c80-9fe2-11eb-9a2b-00fd083f823f.png">
+Certain non-linearity in the model can be encoded by crossing two or more existing features to produce a synthetic feature(feature cross). The new feature can also be added to the linear formula just like any other feature. 
+
+## Regularisation:
+ As we can see that by simply removing the feature crosses we are able to get a much simpler linear model rather than the initial complicated curve.  In order to overcome this problem we do regularization. We try and keep the model as simple as possible. Instead of just doing empirical risk minimization we now start using structural risk minimization. We try to minimize both loss and the complexity. In this topic we analyze model complexity as a function of the weights of all the features in the model. We quantify complexity using the L2 regularization formula, which defines the regularization term as the sum of the squares of all the feature weights.
+ ![Screenshot 2021-04-18 at 1 07 30 AM](https://user-images.githubusercontent.com/74460296/115124990-0e39e580-9fe3-11eb-89de-9a980307d3d1.png)
+<img width="734" alt="Screenshot 2021-04-18 at 1 07 42 AM" src="https://user-images.githubusercontent.com/74460296/115125000-1560f380-9fe3-11eb-835c-4df72d0589ab.png">
+
+ 
+Lambda is the factor accounting for the amount of regularisation effect. Increasing lambda makes the weight distribution more like the Gaussian bell curve and lowering its value results in flatter distribution.
+
+## Logistic Regression
+This is basically used to solve discrete valued problems working in binary of 0 and 1. it can include things like whether a tumor is malignant or benign
+Regularization is also very important in logistic regression. Without regularization, the asymptotic nature of logistic regression would keep driving loss towards 0 in high dimensions. If you don't specify a regularization function, the model will become completely overfit.
+
+## Classification
+In order to map a logistic regression value to a binary category , we must define a classification threshold . In the example of spam and not spam emails, a value above the threshold would be mapped to spam . This threshold value can’t be set to 0.5 always and we need to consider a variety of metrics before deciding our threshold.
+Some terms that we need to know are :
+A true positive is an outcome where the model correctly predicts the positive class. Similarly, a true negative is an outcome where the model correctly predicts the negative class.
+A false positive is an outcome where the model incorrectly predicts the positive class. And a false negative is an outcome where the model incorrectly predicts the negative class.
+Based on this , we define some of our metrics.
+We can summarize the model using a 2x2 matrix containg the four possible outcomes namely true positive(TP), false positive(FP), true negative(TN), false negative(FN). Then evaluate classification models using metrics(accuracy, precision and recall) derived from these four outcomes. Accuracy is the fraction of correct predictions. Accuracy fails to do a good job in class-imbalanced sets. Precision is the fraction of correct positive predictions.
+We first categorize this column of our training data according to our threshold. After this we build and train the logistic regression model on our training dataset. We plot accuracy, precision and recall for this model. We can then experiment with classification threshold to see which one produces the highest accuracy. We see that a threshold of 0.5 causes highest accuracy.
+![Screenshot 2021-04-18 at 1 08 07 AM](https://user-images.githubusercontent.com/74460296/115125206-32e28d00-9fe4-11eb-8810-f28606bf497c.png)
+<img width="750" alt="Screenshot 2021-04-18 at 1 08 34 AM" src="https://user-images.githubusercontent.com/74460296/115125213-39710480-9fe4-11eb-8b57-0dc27fc6fb16.png">
+![Screenshot 2021-04-18 at 1 08 41 AM](https://user-images.githubusercontent.com/74460296/115125234-4e4d9800-9fe4-11eb-88e3-5e999698a878.png)
+
 
 
 
