@@ -1,4 +1,9 @@
 # MOODIFY
+- [x] Week 1
+- [x] Week 2
+- [x] Week 3
+- [x] Week 4
+- [x] Week 5-8 Implementation
 ## WEEK 1
 Made a basic virus simulator using the python we already knew plus some newer library functions. Also learnt Matplotlib to make plots and also learnt using Jupyter notebooks efficiently. 
 In this task, I start by creating an 100 x 150 matrix with one of it's entries as 1.<br />
